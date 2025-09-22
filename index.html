@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karla & Victor - Nuestra Boda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <!-- Portada inicial -->
+  <div class="inicio">
+    <h1>Karla</h1>
+    <h2>&</h2>
+    <h1>Victor</h1>
+    <button onclick="mostrarInvitacion()">ABRIR INVITACIÓN</button>
+  </div>
+
+  <!-- Contenido principal (oculto inicialmente) -->
+  <header id="principal">
+    <h1>Karla & Victor</h1>
+    <p>¡Nos casamos! Acompáñanos en este día tan especial</p>
+  </header>
+  
+  <img class="romantic-image" src="https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFpc2FqZSUyMHJvc2F8ZW58MHx8MHx8fDA%3D" alt="Imagen romántica" />
+  
+  <!-- Sección de la boda -->
+  <section class="boda-section">
+    <div class="container">
+      <h2>Victor & Karla</h2>
+      <p>Nuestra Boda</p>
+      <p>• 28 de Marzo del 2026 •</p>
+      
+      <div class="countdown" id="countdown">
+        <div class="calendar-box" id="days">--<span>días</span></div>
+        <div class="calendar-box" id="hours">--<span>horas</span></div>
+        <div class="calendar-box" id="minutes">--<span>min</span></div>
+        <div class="calendar-box" id="seconds">--<span>seg</span></div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Sección de ubicación -->
+  <section class="boda-section location-section">
+    <div class="container">
+      <h2>Ceremonia y Evento</h2>
+      <p>Tepotzotlán, Jarquin Quinta Montecristo a las 16:30h</p>
+      
+      <img class="location-image" src="https://cdn0.bodas.com.mx/vendor/0633/3_2/960/jpeg/54ae9318-d3b3-4176-bcf3-c33fe4a2c605_5_160633-164558573181600.jpeg" alt="Lugar de la ceremonia">
+      
+      <button onclick="mostrarMapa()" class="location-btn">¿CÓMO LLEGAR?</button>
+      
+      <div id="mapa">
+        <iframe src="https://maps.google.com/maps?width=600&height=400&hl=es&q=Jardin%20Quinta%20Montecristo&t=&z=14&ie=UTF8&iwloc=B&output=embed&language=es" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="boda-section dress-code-section">
+    <div class="container">
+
+      <div class="dress-code-simple">
+        <div data-testid="svgRoot-comp-m4g4ol179" class="AKxYR5 VZYmYf comp-m4g4ol179"><!--?xml version="1.0" encoding="UTF-8"?-->
+            <svg preserveAspectRatio="xMidYMid meet"  class="dress-code" data-bbox="127.2 106.5 180 198.8" viewBox="127.2 106.5 180 198.8" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-m4g4ol179 svg [data-color="1"] {fill: #555555;}
+            #comp-m4g4ol179 svg [data-color="2"] {fill: #CBD2C9;}</style></defs>
+                <g>
+                    <path fill="#D9AE79" d="M235.6 276.6H278l3.7-7.7h-50.2l4.1 7.7z" data-color="1"></path>
+                    <path d="M206.7 305.3c2.2-12.4 14-22.1 26-24.5-9 8.1-18.1 15.1-26 24.5z" fill="#D9AE79" data-color="1"></path>
+                    <path d="M307.2 304.8c-2.2-12.4-14-22.1-26-24.5 9 8.2 18.1 15.2 26 24.5z" fill="#D9AE79" data-color="1"></path>
+                    <path d="M164.7 134.8s-9.1 5.5-18.2 10.9c-7.3 4.4-19.3 10.9-19.3 10.9s3.1 19.9 18.2 44.1c9.7 15.6 21.6 31.8 43.1 52.2 0 .1-35.8-81.2-23.8-118.1z" fill="#D9AE79" data-color="1"></path>
+                    <path d="M188.6 106.5c-4 4.5-6.9 7.9-10.9 12.3l-.7.7c1.4 4.5 2.8 8.9 4.2 13.4 1-.8 3.7-2.1 7.8-2.1 3.5 0 5.6 1.4 6.3 2.1 1.2-3.8 2.2-8.4 3.9-13.5l-1-1.3c-3.9-4.4-5.3-6.9-9.2-11.3l-.4-.3z" fill="#D9AE79" data-color="1"></path>
+                    <path d="M195.3 138.6c-2.2-1.3-3.3-1.5-6.3-1.5-4.2 0-6.8 1.5-7.9 2.2-.7 8.3-2.2 14-4.9 22.9-.2.7-.5 1.2-.7 1.9 4.1 14.7 8.6 31 12.7 45.8 4.1-14.7 8.6-30.9 12.7-45.6v-.2s-1.2-2.5-1.4-3.2c-2.6-8-3.6-14.8-4.2-22.3z" fill="#D9AE79" data-color="1"></path>
+                    <path d="M212.5 134.7s9.1 5.5 18.2 10.9c7.3 4.4 19.3 10.9 19.3 10.9s-3.1 19.9-18.2 44.1c-9.7 15.6-21.6 31.8-43.1 52.2 0 .1 35.8-81.2 23.8-118.1z" fill="#D9AE79" data-color="1"></path>
+                    <path d="M294.5 204.9s-19.6 9-27.5 17.8c-5.9 6.7-8.2 10.4-8.9 11.2-.9 1.4-1.2 2.4-1.5 2.6-.3-.2-.6-1.2-1.5-2.6-.7-.7-3-4.5-8.9-11.2-7.9-8.9-27.5-17.8-27.5-17.8s-12.4 25.1-3 46.1c1.9 4.3 12.7 11.9 14.9 14.9h52.2c2.2-3 13-10.6 14.9-14.9 9.2-21-3.2-46.1-3.2-46.1z" fill="#D9AE79" data-color="1"></path>
+                    <path d="M283.1 266.9H230l-.3-.4c-.8-1.1-3-3-5.3-5-3.9-3.4-8.4-7.3-9.6-10.1-9.5-21.2 2.5-45.9 3-46.9l.4-.9.9.4c.8.4 19.9 9.1 27.8 18.1 4.2 4.7 6.6 8 7.8 9.7.5.7.9 1.2 1 1.4l.1.2c.3.4.5.8.7 1.2.2-.4.4-.8.7-1.2l.1-.2c.2-.2.6-.7 1-1.4 1.3-1.8 3.7-5 7.8-9.7 8-8.9 27-17.7 27.8-18.1l.9-.4.4.9c.5 1 12.5 25.7 3 46.9-1.2 2.8-5.7 6.7-9.6 10.1-2.3 2-4.5 3.9-5.3 5l-.2.4zm-52.1-2h51.2c1.1-1.2 3-3 5.3-4.9 3.6-3.1 8.1-7 9.1-9.4 8.1-18.1-.5-39.7-2.5-44.4-3.9 1.9-19.6 9.6-26.3 17.2-4.1 4.6-6.5 7.9-7.7 9.6-.5.8-.9 1.2-1.2 1.5-.4.6-.7 1.1-.9 1.6-.3.6-.5 1.1-1 1.3l-.5.3-.5-.3c-.4-.2-.6-.7-1-1.3-.2-.4-.5-1-.9-1.6-.3-.3-.6-.8-1.2-1.5-1.3-1.7-3.6-5-7.7-9.6-6.7-7.6-22.3-15.3-26.3-17.2-2 4.6-10.6 26.2-2.5 44.4 1.1 2.4 5.5 6.3 9.1 9.4 2.4 1.9 4.4 3.6 5.5 4.9zm24.9-29.1z" fill="#FFFFFF" data-color="2"></path>
+                </g>
+            </svg>
+        </div>
+      <h2>Código de Vestimenta</h2>
+        <p><span class="check-icon"><div><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-go42p8" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CheckroomIcon"><path d="M21.6 18.2 13 11.75v-.91c1.65-.49 2.8-2.17 2.43-4.05-.26-1.31-1.3-2.4-2.61-2.7C10.54 3.57 8.5 5.3 8.5 7.5h2c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 .84-.69 1.52-1.53 1.5-.54-.01-.97.45-.97.99v1.76L2.4 18.2c-.77.58-.36 1.8.6 1.8h18c.96 0 1.37-1.22.6-1.8zM6 18l6-4.5 6 4.5H6z"></path></svg></div>
+        </span> Formal</p>
+        <p class="dress-code-note">Traje elegante o de gala para caballeros<br>Vestido largo o de cóctel para damas</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Sección de confirmación -->
+  <section id="sectionConfirm" class="confirmation-section">
+    <div class="container">
+      <h2>Confirma tu asistencia</h2>
+
+     
+     
+      <div class="code-form" id="confirm">
+              <input  type="text" id="codigoSecreto" placeholder="Código secreto" required />
+              <button onclick="verificarCodigo()">Verificar</button>
+      </div>
+      
+      <div id="panelReducido" class="panel-reducido">
+        <h3>Reducir número de invitados</h3>
+        <div class="contador">
+          <label>Adultos:</label>
+          <button onclick="cambiarInvitados('numeroAdultos', -1)">−</button>
+          <span id="adultos"><span id="numeroAdultos"></span></span>
+        </div>
+        <div class="contador">
+          <label>Niños:</label>
+          <button onclick="cambiarInvitados('children', -1)">−</button>
+          <span id="ninos"><span id="children"></span></span>
+        </div>
+        <button onclick="confirmarAsistencia(event)" class="confirmar-reducido">Confirmar asistencia reducida</button>
+      </div>
+      
+      <div class="info-box" id="infoBox">
+        <form class="codigo-form" id="formulario" onsubmit="confirmarAsistencia(event)">
+          <button type="submit">Confirmar Asistencia</button>
+          <button type="button" class="decline-btn" onclick="declinarAsistencia(event)">Lamentablemente no podré asistir</button>
+          <button type="button" onclick="mostrarPanelReducido()">Confirmar para menos invitados</button>
+        </form>
+        <p><strong>Nombre:</strong> <span id="nombreInvitado"></span></p>
+        <p><strong>Asistencia:</strong> <span id="asistenciaInvitado"></span></p>
+        <p><strong>Cuentas con los siguientes boletos:</strong>
+        <p><strong>Niños:</strong> <span id="infoBoxChildren"></span></p>
+        <p><strong>Adultos:</strong> <span id="infoBoxAdultos"></span></p>
+        <button type="button" class="allergy-btn" onclick="mostrarModalAlergias()">¿Alguna alergia o restricción?</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="boda-section gift-section">
+    <div class="container">
+      <h2>Mesa de Regalos</h2>
+      <p class="subtitle">Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo...</p>
+      
+      <div class="gift-cards">
+        <!-- Tarjeta para Amazon -->
+        <div class="gift-card amazon-card">
+          <div class="gift-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
+          </div>
+          <div class="gift-info">
+            <h3>Lista de Amazon</h3>
+            <p>Regalos seleccionados en nuestra tienda favorita</p>
+            <a href="https://www.amazon.com.mx/wedding/karla-victor-marzo-2026/registry/XXXXXXXXXX" 
+               target="_blank" 
+               class="gift-button">
+              Ver Lista
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Tarjeta para Liverpool -->
+        <div class="gift-card liverpool-card">
+          <div class="gift-logo">
+            <img src="https://www.tauro.mx/wp-content/uploads/2017/01/liverpool-logo.jpg" alt="Liverpool Logo">
+          </div>
+          <div class="gift-info">
+            <h3>Mesa de Regalos Liverpool</h3>
+            <p>Artículos para nuestro hogar en diferentes precios</p>
+            <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/XXXXXXXXXX" 
+               target="_blank" 
+               class="gift-button">
+              Ver Lista
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gift-note">
+        <p>¡Gracias por contribuir a nuestro futuro juntos!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="boda-section itinerary-section">
+    <div class="container">
+      <h2>Itinerario del Día</h2>
+      <p class="subtitle">Nuestro día especial paso a paso</p>
+      
+      <div class="timeline">
+        <!-- Evento 1 -->
+        <div class="timeline-event">
+          <div class="event-time">
+            <div class="event-dot"></div>
+              15:30 hrs
+          </div>
+          <div class="event-card">
+            <h3>Ceremonia</h3>
+            <p>Jarquin Quinta Montecristo, Tepotzotlán</p>
+            <div class="event-note">Vestimenta formal</div>
+          </div>
+        </div>
+        
+        <!-- Evento 2 -->
+        <div class="timeline-event">
+          <div class="event-time">
+            <div class="event-dot"></div>
+              16:45 hrs
+          </div>
+          <div class="event-card">
+            <h3>Sesión de Fotos</h3>
+            <p>Jardines de la Quinta</p>
+            <div class="event-note">¡Prepárense para sonreír!</div>
+          </div>
+        </div>
+        
+        <!-- Evento 3 -->
+        <div class="timeline-event">
+          <div class="event-time">
+            <div class="event-dot"></div>
+              17:30 hrs
+          </div>
+          <div class="event-card">
+            <h3>Cóctel de Bienvenida</h3>
+            <p>Terraza Principal</p>
+            <div class="event-note">Bebidas y bocadillos</div>
+          </div>
+        </div>
+        
+        <!-- Evento 4 -->
+        <div class="timeline-event">
+          <div class="event-time">
+            <div class="event-dot"></div>
+              18:30 hrs
+          </div>
+          <div class="event-card">
+            <h3>Banquete</h3>
+            <p>Salón Principal</p>
+            <div class="event-note">Menú de 3 tiempos</div>
+          </div>
+        </div>
+        
+        <!-- Evento 5 -->
+        <div class="timeline-event">
+          <div class="event-time">
+            <div class="event-dot"></div>
+              20:00 hrs
+          </div>
+          <div class="event-card">
+            <h3>Baile y Fiesta</h3>
+            <p>Pista de Baile</p>
+            <div class="event-note">¡Todos invitados a bailar!</div>
+          </div>
+        </div>
+        
+        <!-- Evento 6 -->
+        <div class="timeline-event">
+          <div class="event-time">
+            <div class="event-dot"></div>
+              23:00 hrs
+          </div>
+          <div class="event-card">
+            <h3>Despedida</h3>
+            <p>Entrada Principal</p>
+            <div class="event-note">¡Gracias por acompañarnos!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Galería de momentos -->
+  <section class="boda-section galeria-momentos">
+    <div class="container">
+      <h2>Momentos Especiales</h2>
+      
+      <div class="cards-container">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b" alt="Primera cita">
+          <div class="card-content">
+            <h3>Primera Cita</h3>
+            <p>Una noche mágica que marcó el inicio de nuestra historia 💖</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1531988042231-d39a9cc12a9a" alt="Compromiso">
+          <div class="card-content">
+            <h3>Compromiso</h3>
+            <p>Entre risas y nervios, dijimos: ¡Sí, acepto! 💍</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde" alt="Viajes juntos">
+          <div class="card-content">
+            <h3>Viajes Juntos</h3>
+            <p>Descubriendo el mundo de la mano 🗺️✨</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>Con amor, Victor & Karla</p>
+  </footer>
+  
+  <!-- Audio -->
+  <audio id="musica" loop>
+    <source src="https://f2d657fced13bf9a6127655473f9dfb4.cdn.bubble.io/f1720749630133x873512878579767900/Marry%20you%20-%20COVER.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio.
+  </audio>
+  
+  <!-- Control de música -->
+  <div id="music-controls" class="music-controls">
+    <button id="music-toggle" class="music-btn" onclick="toggleAudio()">
+      <span class="music-note">♫</span>
+      <span class="sound-waves">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </span>
+    </button>
+  </div>
+  
+  <!-- Hacker Warning Overlay -->
+  <div id="hacker-warning" class="hacker-overlay">
+    <div class="hacker-content">
+      <div class="warning-icon">⚠️</div>
+      <p>Si me intentas hackear terminarás hackeado, tu número de invitados ahora es 0.</p>
+    </div>
+  </div>
+
+  <!-- Modal de Alergias -->
+  <div id="allergy-modal" class="allergy-overlay">
+    <div class="allergy-content">
+      <h3>Restricciones Alimentarias</h3>
+      <p>Por favor, indícanos si tienes alguna alergia o restricción para considerarla en el menú.</p>
+      <form id="allergy-form">
+        <div class="allergy-list">
+          <label><input type="checkbox" name="alergia" value="Nueces"> Nueces</label>
+          <label><input type="checkbox" name="alergia" value="Mariscos"> Mariscos</label>
+          <label><input type="checkbox" name="alergia" value="Lácteos"> Lácteos</label>
+          <label><input type="checkbox" name="alergia" value="Gluten"> Gluten</label>
+          <label><input type="checkbox" name="alergia" value="Soya"> Soya</label>
+          <label><input type="checkbox" name="alergia" value="Huevo"> Huevo</label>
+        </div>
+        <div class="other-allergy">
+          <label>
+            <input type="checkbox" id="otra-alergia-check"> Otra:
+          </label>
+          <input type="text" id="otra-alergia-input" placeholder="Especifícala aquí" disabled>
+        </div>
+        <div class="allergy-buttons">
+          <button type="button" onclick="guardarAlergias()">Guardar y Enviar</button>
+          <button type="button" class="close-btn" onclick="cerrarModalAlergias()">Cerrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script  src="scripts.js"></script>
+</body>
+</html>
