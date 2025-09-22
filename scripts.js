@@ -215,9 +215,10 @@
         alert("Código no válido");
         return;
       }
+
       originalAdultos = parseInt(data.invitado.adultos) || 0; 
       originalChildren = parseInt(data.invitado.children) || 0;
-      const { token, invitado } = data;
+      const { invitado } = data;
       const {
         nombre,
         asistencia,
@@ -240,6 +241,9 @@
       document.getElementById("confirm").style.display = "none";
 
       console.log("Respuesta recibida:", data);
+      token = data.token;
+      window.token = data.token; // Asignar al token global
+      asistencia = data.invitado.asistencia;
     }
 
 
@@ -249,7 +253,7 @@
       const nombre = document.getElementById("nombreInvitado").textContent.trim();
       const adultos = parseInt(document.getElementById("numeroAdultos").textContent) || 0;
       const children = parseInt(document.getElementById("children").textContent) || 0;
-
+      let asistencia = document.getElementById("asistenciaInvitado").textContent.trim();
       // 🚨 Validación: no permitir aumentar invitados
       if (adultos > originalAdultos || children > originalChildren) {
         alert(adultos)
@@ -259,7 +263,6 @@
         checkDectected();
         return;
       }
-
       // Actualizar estado de asistencia
       if (asistencia === "Sin Confirmar") {
         asistencia = "Confirmado";
@@ -269,17 +272,15 @@
       const formData = new FormData();
       formData.append("nombre", nombre);
       formData.append("asistencia", asistencia);
-      formData.append("token", token);
+      formData.append("token", window.token);
       formData.append("adultos", adultos);
       formData.append("children", children);
       formData.append("alergias", alergiasGuardadas || "");
-
       // Actualizar UI inmediatamente
       document.getElementById("infoBoxChildren").textContent = children;
       document.getElementById("infoBoxAdultos").textContent = adultos;
       document.getElementById("panelReducido").style.display = "none";
       document.getElementById("infoBox").style.display = "block";
-
       try {
         const res = await fetch(SCRIPT_URL, { method: "POST", body: formData });
         const texto = await res.text();
