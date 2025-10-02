@@ -179,7 +179,140 @@
       document.querySelectorAll('section').forEach(section => {
         section.style.display = 'none';
       });
+
+      // --- Lógica del Carrusel de Galería ---
+      const galleries = {
+        cita: [
+          'images/firstdate.jpeg',
+          'images/firstdate2.jpeg',
+        ],
+        compromiso: [
+          'images/propuesta.jpeg',
+          'images/compromiso2.jpeg',
+          'images/compromiso3.jpeg',
+          'images/compromiso4.jpeg',
+          'images/compromiso5.jpeg',
+          'images/compromiso6.jpeg',
+          'images/compromiso7.jpeg',
+          'images/compromiso8.jpeg',
+          'images/compromiso9.jpeg',
+          'images/compromiso10.jpeg',
+          'images/compromiso11.jpeg',
+          'images/compromiso12.jpeg',
+          'images/compromiso13.jpeg',
+          'images/compromiso14.jpeg',
+          'images/compromiso15.jpeg',
+          'images/compromiso16.jpeg',
+          'images/compromiso17.jpeg',
+          'images/compromiso18.jpeg',
+          'images/compromiso19.jpeg',
+          'images/compromiso20.jpeg',
+        ],
+        pedida: [
+          'images/pedida1.jpeg',
+          'images/pedida2.jpeg',
+          'images/pedida3.jpeg',
+          'images/pedida4.jpeg',
+          'images/pedida5.jpeg',
+          'images/pedida6.jpeg',
+          'images/pedida7.jpeg',
+          'images/pedida8.jpeg',
+        ],
+        viajes: [
+          'images/hidalgo.jpeg',
+          'images/travel2.jpeg',
+          'images/travel3.jpeg',
+        ]
+      };
+
+      let currentGallery = [];
+      let currentIndex = 0;
+
+      const galleryModal = document.getElementById('gallery-modal');
+      const galleryImage = document.getElementById('gallery-image');
+      const closeBtn = document.querySelector('.gallery-close-btn');
+      const prevBtn = document.querySelector('.gallery-nav-btn.prev');
+      const nextBtn = document.querySelector('.gallery-nav-btn.next');
+
+      document.querySelectorAll('.card[data-gallery]').forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+          const galleryKey = card.dataset.gallery;
+          currentGallery = galleries[galleryKey];
+          currentIndex = 0;
+          openGalleryModal();
+        });
+      });
+
+      function openGalleryModal() {
+        updateImage();
+        galleryModal.classList.add('visible');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeGalleryModal() {
+        galleryModal.classList.remove('visible');
+        document.body.style.overflow = 'auto';
+      }
+
+      function updateImage() {
+        galleryImage.src = currentGallery[currentIndex];
+      }
+
+      function showNextImage() {
+        currentIndex = (currentIndex + 1) % currentGallery.length;
+        updateImage();
+      }
+
+      function showPrevImage() {
+        currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+        updateImage();
+      }
+
+      closeBtn.addEventListener('click', closeGalleryModal);
+      nextBtn.addEventListener('click', showNextImage);
+      prevBtn.addEventListener('click', showPrevImage);
+      galleryModal.addEventListener('click', (e) => {
+        if (e.target === galleryModal) {
+          closeGalleryModal();
+        }
+      });
     });
+
+    // --- Sistema de Modales Genérico ---
+    function mostrarModalMensaje(mensaje) {
+      const modal = document.getElementById('message-modal');
+      const texto = document.getElementById('message-text');
+      texto.textContent = mensaje;
+      modal.style.display = 'flex';
+    }
+
+    function cerrarModalMensaje() {
+      const modal = document.getElementById('message-modal');
+      modal.style.display = 'none';
+    }
+    // --- Fin Sistema de Modales ---
+
+    // --- Sistema de Modal de Confirmación ---
+    function mostrarModalConfirmacion(mensaje, callbackSi) {
+      const modal = document.getElementById('confirm-modal');
+      const texto = document.getElementById('confirm-text');
+      const btnSi = document.getElementById('confirm-yes-btn');
+      const btnNo = document.getElementById('confirm-no-btn');
+
+      texto.textContent = mensaje;
+      modal.style.display = 'flex';
+
+      btnSi.onclick = () => {
+        modal.style.display = 'none';
+        callbackSi();
+      };
+
+      btnNo.onclick = () => {
+        modal.style.display = 'none';
+      };
+    }
+    // --- Fin Sistema de Modal de Confirmación ---
 
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxNJR2wj7ViqyXcCXi1M4uf0PPgqPBLtdVOIDAJgGkNpU6agM9uo7cgKf6jSGnM17XO8Q/exec';
     let token = '';
@@ -191,9 +324,12 @@
     function verificarCodigo() {
       const codigo = document.getElementById("codigoSecreto").value.trim();
       if (!codigo) {
-        alert("Por favor ingresa un código");
+        mostrarModalMensaje("Por favor ingresa un código");
         return;
       }
+
+      const button = event.target;
+      button.classList.add('loading');
 
       // Elimina script viejo si existe
       const oldScript = document.getElementById("jsonpScript");
@@ -202,17 +338,26 @@
       const script = document.createElement("script");
       script.id = "jsonpScript";
       script.src = `${SCRIPT_URL}?codigo=${encodeURIComponent(codigo)}&callback=procesarRespuesta`;
+      
+      script.onerror = () => {
+        mostrarModalMensaje('Hubo un error al verificar el código. Intenta de nuevo.');
+        button.classList.remove('loading');
+      };
+
       document.body.appendChild(script);
     }
 
     function procesarRespuesta(data) {
+      const button = document.querySelector('.code-form button');
+      if (button) button.classList.remove('loading');
+
       if (data.error) {
-        alert(data.error);
+        mostrarModalMensaje(data.error);
         return;
       }
 
       if (!data.invitado) {
-        alert("Código no válido");
+        mostrarModalMensaje("Código no válido");
         return;
       }
 
@@ -250,17 +395,17 @@
     async function confirmarAsistencia(event) {
       event.preventDefault();
 
+      const button = event.target;
+      button.classList.add('loading');
+
       const nombre = document.getElementById("nombreInvitado").textContent.trim();
       const adultos = parseInt(document.getElementById("numeroAdultos").textContent) || 0;
       const children = parseInt(document.getElementById("children").textContent) || 0;
       let asistencia = document.getElementById("asistenciaInvitado").textContent.trim();
       // 🚨 Validación: no permitir aumentar invitados
       if (adultos > originalAdultos || children > originalChildren) {
-        alert(adultos)
-        alert(originalAdultos)
-        alert(children)
-        alert(originalChildren)
         checkDectected();
+        button.classList.remove('loading');
         return;
       }
       // Actualizar estado de asistencia
@@ -287,10 +432,11 @@
 
         if (texto === "Trampa") {
           checkDectected();
+          button.classList.remove('loading');
           return;
         }
 
-        alert("¡Gracias por confirmar tu asistencia!");
+        mostrarModalMensaje("¡Gracias por confirmar tu asistencia!");
         console.log("Respuesta del servidor:", texto);
 
         // Ocultar formulario de confirmación
@@ -302,7 +448,9 @@
 
       } catch (error) {
         console.error("Error en confirmación:", error);
-        alert("Hubo un error. Por favor, intenta nuevamente.");
+        mostrarModalMensaje("Hubo un error. Por favor, intenta nuevamente.");
+      } finally {
+        button.classList.remove('loading');
       }
     }
 
@@ -321,13 +469,11 @@
   
     }
     async function declinarAsistencia(event) {
-      event.preventDefault();
-
-      if (!confirm("¿Estás seguro de que no podrás acompañarnos?")) {
-        return; // Si el usuario cancela, no hacemos nada
-      }
-
-      const nombre = document.getElementById("nombreInvitado").textContent;
+      const button = event.target;
+      
+      const ejecutarDeclinacion = () => {
+      button.classList.add('loading');
+      const nombre = document.getElementById("nombreInvitado").textContent.trim();
       const formData = new FormData();
       formData.append("nombre", nombre);
       formData.append("asistencia", "No");
@@ -341,9 +487,18 @@
       })
       .then(res => res.text())
       .then(texto => {
-            alert("Lamentamos mucho que no puedas acompañarnos. ¡Te enviaremos fotos!");
+            mostrarModalMensaje("Lamentamos mucho que no puedas acompañarnos. ¡Te enviaremos fotos!");
             document.getElementById('sectionConfirm').style.display = 'none';
+        })
+        .catch(error => {
+          console.error("Error al declinar:", error);
+          mostrarModalMensaje("Hubo un error. Por favor, intenta nuevamente.");
+        })
+        .finally(() => {
+          button.classList.remove('loading');
         });
+      };
+      mostrarModalConfirmacion("¿Estás seguro de que no podrás acompañarnos?", ejecutarDeclinacion);
     }
 
     function mostrarModalAlergias() {
@@ -407,6 +562,6 @@
       // Guardar las alergias en la variable global
       alergiasGuardadas = alergiasSeleccionadas.join(', ');
 
-      alert("Tus preferencias se han guardado y se enviarán al confirmar tu asistencia.");
+      mostrarModalMensaje("Tus preferencias se han guardado y se enviarán al confirmar tu asistencia.");
       cerrarModalAlergias();
     }

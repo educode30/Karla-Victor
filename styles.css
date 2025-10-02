@@ -425,12 +425,12 @@
     }
     
     .decline-btn {
-      background-color: #888; /* Un color gris neutro */
+      background-color: #888 !important; /* Un color gris neutro */
       color: var(--color-white);
     }
 
     .decline-btn:hover {
-      background-color: #666;
+      background-color: #666 !important;
     }
 
     /* Botón de alergias */
@@ -517,17 +517,55 @@
       justify-content: center;
     }
 
-    .allergy-buttons button {
+    .allergy-buttons button, .message-content .close-btn, .confirm-buttons button {
       padding: 0.8rem 1.5rem;
       border-radius: 8px;
       border: none;
       cursor: pointer;
-      background-color: var(--color-primary);
       color: var(--color-white);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background-color: var(--color-primary);
     }
 
-    .allergy-buttons .close-btn {
+    .allergy-buttons button:hover, .message-content .close-btn:hover, .confirm-buttons button:hover {
+      background-color: var(--color-secondary);
+      transform: translateY(-2px);
+    }
+
+    .allergy-buttons .close-btn, .message-content .close-btn {
       background-color: #888;
+    }
+
+    /* Modal de Mensajes Genérico */
+    .message-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: none; /* Oculto por defecto */
+      justify-content: center;
+      align-items: center;
+      z-index: 9995; /* Un poco por debajo del de alergias */
+      padding: 1rem;
+    }
+
+    .message-content {
+      background-color: var(--color-light);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+    }
+
+    .message-content p {
+      font-size: 1.1rem;
+      color: var(--color-text);
+      margin-bottom: 2rem;
     }
 
     /* Galería de momentos */
@@ -1152,4 +1190,105 @@ section {
   .boda-section h2, .galeria-momentos h2 {
     font-size: 2.2rem;
   }
+}
+
+/* Estilos para el botón de carga */
+.loading {
+  position: relative;
+  color: transparent !important; /* Oculta el texto del botón */
+  pointer-events: none; /* Deshabilita clics mientras carga */
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--color-white);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Estilos para el Modal de Galería (Carrusel) */
+.gallery-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-modal-overlay.visible {
+  display: flex;
+  opacity: 1;
+}
+
+.gallery-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.gallery-modal-content img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 10px;
+}
+
+.gallery-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.gallery-close-btn:hover {
+  color: #bbb;
+}
+
+.gallery-nav-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.3s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.6);
 }

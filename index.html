@@ -268,7 +268,7 @@
       <h2>Momentos Especiales</h2>
       
       <div class="cards-container">
-        <div class="card">
+        <div class="card" data-gallery="cita">
           <img src="images/firstdate.jpeg" alt="Primera cita">
           <div class="card-content">
             <h3>Primera Cita</h3>
@@ -276,7 +276,7 @@
           </div>
         </div>
         
-        <div class="card">
+        <div class="card" data-gallery="compromiso">
           <img src="images/propuesta.jpeg" alt="Compromiso">
           <div class="card-content">
             <h3>Compromiso</h3>
@@ -284,8 +284,16 @@
           </div>
         </div>
         
-        <div class="card">
-          <img src="images/travel.jpeg" alt="Viajes juntos">
+        <div class="card" data-gallery="pedida">
+          <img src="images/pedida4.jpeg" alt="Pedida de mano">
+          <div class="card-content">
+            <h3>Pedida de Mano</h3>
+            <p>El momento en que nuestras familias se unieron a nuestro sí. 🥂</p>
+          </div>
+        </div>
+        
+        <div class="card" data-gallery="viajes">
+          <img src="images/hidalgo.jpeg" alt="Viajes juntos">
           <div class="card-content">
             <h3>Viajes Juntos</h3>
             <p>Descubriendo el mundo de la mano 🗺️✨</p>
@@ -353,6 +361,37 @@
       </form>
     </div>
   </div>
+
+  <!-- Modal de Mensajes Genérico -->
+  <div id="message-modal" class="message-overlay">
+    <div class="message-content">
+      <p id="message-text"></p>
+      <button type="button" class="close-btn" onclick="cerrarModalMensaje()">Aceptar</button>
+    </div>
+  </div>
+
+  <!-- Modal de Confirmación -->
+  <div id="confirm-modal" class="message-overlay">
+    <div class="message-content">
+      <p id="confirm-text"></p>
+      <div class="confirm-buttons">
+        <button type="button" id="confirm-yes-btn">Sí, estoy seguro</button>
+        <button type="button" id="confirm-no-btn" class="close-btn">No, cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Carrusel de Galería -->
+  <div id="gallery-modal" class="gallery-modal-overlay">
+    <span class="gallery-close-btn">&times;</span>
+    <span class="gallery-nav-btn prev">&#10094;</span>
+    <span class="gallery-nav-btn next">&#10095;</span>
+    <div class="gallery-modal-content">
+      <img id="gallery-image" src="" alt="Imagen de la galería">
+      <div id="gallery-caption"></div>
+    </div>
+  </div>
+
 
   <script  src="scripts.js"></script>
 </body>
