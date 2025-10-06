@@ -223,7 +223,22 @@
       }
 
       .number {
+
         font-size: 1.8rem;
+      }
+      .countdown {
+        display: flex; /* Ensure it's a flex container */
+        justify-content: space-around; /* Distribute items evenly */
+        align-items: center; /* Align items vertically */
+      }
+
+      .calendar-box {
+        width: 22%; /* Distribute items evenly */
+        font-size: 1.8rem;
+      }
+      .count-box {
+        width: auto; /* Adjust width to fit content */
+        min-width: 70px; /* Ensure a minimum width */
       }
     }
 
@@ -1469,6 +1484,10 @@ section {
 
 .count-box {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-width: 100px;
 }
 
@@ -1677,8 +1696,22 @@ body {
   }
 }
 
-  .gallery-section {
+.gallery-section {
   --gap: 40px;
   --col-w: 45%;
   --radius: 16px;
+}
+
+@media screen and (max-width: 479px) {
+    .countdown {
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        flex-flow: row;
+        justify-content: center;
+        margin-top: -23px;
+        margin-bottom: -22px;
+        padding-bottom: 0;
+        font-size: 12px;
+        overflow: visible;
+    }
 }
