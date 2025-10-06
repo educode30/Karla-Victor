@@ -5,7 +5,6 @@
       
       // Mostrar contenido principal
       document.getElementById('principal').style.display = 'flex';
-      document.querySelector('.romantic-image').style.display = 'block';
       
       // Iniciar música automáticamente
       const musica = document.getElementById('musica');
@@ -33,6 +32,7 @@
       
       // Configurar observador de scroll
       initScrollAnimations();
+
     }
 
     // Función para animaciones al hacer scroll
@@ -124,10 +124,10 @@
         const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
         const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
         
-        document.getElementById('days').innerHTML = dias + '<span>días</span>';
-        document.getElementById('hours').innerHTML = horas + '<span>horas</span>';
-        document.getElementById('minutes').innerHTML = minutos + '<span>min</span>';
-        document.getElementById('seconds').innerHTML = segundos + '<span>seg</span>';
+        document.getElementById('days').innerHTML = dias;
+        document.getElementById('hours').innerHTML = horas;
+        document.getElementById('minutes').innerHTML = minutos;
+        document.getElementById('seconds').innerHTML = segundos;
         
         if (diferencia < 0) {
           clearInterval(actualizarCuentaRegresiva);
@@ -168,7 +168,6 @@
     document.addEventListener('DOMContentLoaded', function() {
       // Ocultar todos los elementos excepto la portada inicial
       document.getElementById('principal').style.display = 'none';
-      document.querySelector('.romantic-image').style.display = 'none';
       document.getElementById('mapa').style.display = 'none';
       document.getElementById('panelReducido').style.display = 'none';
       document.getElementById('infoBox').style.display = 'none';
@@ -565,3 +564,9 @@
       mostrarModalMensaje("Tus preferencias se han guardado y se enviarán al confirmar tu asistencia.");
       cerrarModalAlergias();
     }
+
+    // === ACTIVAR EFECTO DE DESPLAZAMIENTO ===
+ 
+  function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}

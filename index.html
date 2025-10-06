@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karla & Victor - Nuestra Boda</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="styles.css">
+
 
 </head>
 <body>
@@ -20,32 +21,87 @@
   <!-- Contenido principal (oculto inicialmente) -->
   <header id="principal">
     <h1>Karla & Victor</h1>
-    <p>¡Nos casamos! Acompáñanos en este día tan especial</p>
+    <p><b>¡Nos casamos!</b> <b>Acompáñanos en este día tan especial</b></p>
   </header>
   
-  <img class="romantic-image" src="images/fondo.jpeg" alt="Imagen romántica" />
   
-  <!-- Sección de la boda -->
+
   <section class="boda-section">
     <div class="container">
-      <h2>Victor & Karla</h2>
-      <p>Nuestra Boda</p>
-      <p>• 28 de Marzo del 2026 •</p>
-      
+      <p class="bendicion">CON LA BENDICIÓN DE DIOS Y NUESTRAS FAMILIAS:</p>
+      <h2 class="nombres">Victor & Karla</h2>
+      <p class="subtitulo">Nuestra Boda</p>
+      <p class="fecha">• 28 de Marzo del 2026 •</p>
+
+      <div class="info-boda">
+        <div class="info-item">
+          <div class="linea"></div>
+          <p class="info-texto">SÁBADO</p>
+          <div class="linea"></div>
+        </div>
+
+        <div class="fecha-grande">
+          <p class="mes">MARZO</p>
+          <h1 class="dia">28</h1>
+          <p class="anio">2026</p>
+        </div>
+
+        <div class="info-item">
+          <div class="linea"></div>
+          <p class="info-texto">8:00 PM</p>
+          <div class="linea"></div>
+        </div>
+      </div>
+
       <div class="countdown" id="countdown">
-        <div class="calendar-box" id="days">--<span>días</span></div>
-        <div class="calendar-box" id="hours">--<span>horas</span></div>
-        <div class="calendar-box" id="minutes">--<span>min</span></div>
-        <div class="calendar-box" id="seconds">--<span>seg</span></div>
+        <div class="count-box">
+          <div class="count-number" id="days">00</div>
+          <div class="count-label">DÍAS</div>
+        </div>
+        <div class="count-box">
+          <div class="count-number" id="hours">00</div>
+          <div class="count-label">HORAS</div>
+        </div>
+        <div class="count-box">
+          <div class="count-number" id="minutes">00</div>
+          <div class="count-label">MINUTOS</div>
+        </div>
+        <div class="count-box">
+          <div class="count-number" id="seconds">00</div>
+          <div class="count-label">SEGUNDOS</div>
+        </div>
       </div>
     </div>
   </section>
-  
+
+<section class="gallery-section">
+  <div class="gallery">
+    <div class="column left-column">
+      <img src="images/compromiso1.jpeg" alt="foto 1">
+      <img src="images/compromiso2.jpeg" alt="foto 2">
+      <img src="images/compromiso3.jpeg" alt="foto 3">
+      <img src="images/compromiso1.jpeg" alt="foto 1">
+      <img src="images/compromiso2.jpeg" alt="foto 2">
+      <img src="images/compromiso3.jpeg" alt="foto 3">
+    </div>
+    <div class="column right-column">
+      <img src="images/compromiso4.jpeg" alt="foto 4">
+      <img src="images/compromiso5.jpeg" alt="foto 5">
+      <img src="images/compromiso6.jpeg" alt="foto 6">
+      <img src="images/compromiso4.jpeg" alt="foto 4">
+      <img src="images/compromiso5.jpeg" alt="foto 5">
+      <img src="images/compromiso6.jpeg" alt="foto 6">
+    </div>
+  </div>
+</section>
+
+
+ 
   <!-- Sección de ubicación -->
   <section class="boda-section location-section">
     <div class="container">
       <h2>Ceremonia y Evento</h2>
-      <p>Tepotzotlán, Jarquin Quinta Montecristo a las 16:30h</p>
+      <p>Tepotzotlán, Jardin Quinta Montecristo a las 16:30h</p>
       
       <img class="location-image" src="https://cdn0.bodas.com.mx/vendor/0633/3_2/960/jpeg/54ae9318-d3b3-4176-bcf3-c33fe4a2c605_5_160633-164558573181600.jpeg" alt="Lugar de la ceremonia">
       
@@ -394,5 +450,7 @@
 
 
   <script  src="scripts.js"></script>
+  <script  src="galery.js"></script>
+
 </body>
 </html>
