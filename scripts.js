@@ -1,3 +1,4 @@
+ 
  // Función para mostrar la invitación
     function mostrarInvitacion() {
       // Ocultar portada inicial
@@ -178,6 +179,24 @@
       document.querySelectorAll('section').forEach(section => {
         section.style.display = 'none';
       });
+
+      // --- Lógica del Modal de Código de Vestimenta ---
+      const dressModal = document.getElementById('dressModal');
+      const openBtn = document.getElementById('openDressCode');
+      const closeBtns = document.getElementById('closeDressModal');
+
+      if (dressModal && openBtn && closeBtns) {
+        openBtn.onclick = () => {
+          dressModal.style.display = 'block';
+        };
+        closeBtns.onclick = () => {
+          dressModal.style.display = 'none';
+        };
+        window.onclick = (event) => {
+          if (event.target == dressModal) dressModal.style.display = 'none';
+        };
+      }
+      
 
       // --- Lógica del Carrusel de Galería ---
       const galleries = {
