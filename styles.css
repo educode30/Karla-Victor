@@ -102,7 +102,7 @@
     /* Encabezado principal */
     #principal {
       display: none;
-      background: url('images/fondo.jpeg') center/cover no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/fondo.jpeg') center/cover no-repeat;
       flex-direction: column;
       justify-content: center;
       background-size: cover;
@@ -217,28 +217,23 @@
     }
     
     @media (max-width: 768px) {
-      .calendar-box {
-        width: 70px;
-        height: 70px;
-      }
-
-      .number {
-
-        font-size: 1.8rem;
-      }
       .countdown {
-        display: flex; /* Ensure it's a flex container */
-        justify-content: space-around; /* Distribute items evenly */
-        align-items: center; /* Align items vertically */
-      }
-
-      .calendar-box {
-        width: 22%; /* Distribute items evenly */
-        font-size: 1.8rem;
+        flex-wrap: nowrap; /* ¡Importante! Evita que los elementos salten a la siguiente línea */
+        gap: 0.5rem; /* Reduce el espacio entre elementos */
+        justify-content: space-between; /* Distribuye los elementos uniformemente */
+        padding: 0 5px; /* Pequeño padding lateral para evitar que toquen los bordes */
       }
       .count-box {
-        width: auto; /* Adjust width to fit content */
-        min-width: 70px; /* Ensure a minimum width */
+        width: 23%; /* Asigna un porcentaje de ancho para que quepan los 4 elementos */
+        min-width: 0; /* Permite que el elemento se encoja si es necesario */
+        padding: 0.5rem 0; /* Reduce el padding interno */
+      }
+      .count-number {
+        font-size: 2rem; /* Reduce el tamaño de la fuente de los números */
+      }
+      .count-label {
+        font-size: 0.6rem; /* Reduce el tamaño de la fuente de las etiquetas */
+        letter-spacing: 0; /* Sin espaciado extra para la abreviatura */
       }
     }
 
@@ -1388,10 +1383,11 @@ section {
 .bendicion {
   font-family: 'Playfair Display', serif;
   text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: 3px;
-  color: #824b34;
+  font-size: 1.2rem; /* Aumentado el tamaño de la fuente */
+  letter-spacing: 2px; /* Reducido el espaciado para mejor legibilidad */
+  color: #2c2222; /* Tono aún más oscuro */
   margin-bottom: 1.5rem;
+  font-weight: 700; /* Hecho más audaz */
 }
 
 .nombres {
@@ -1403,15 +1399,16 @@ section {
 }
 
 .subtitulo {
-  font-size: 1.1rem;
-  color: #8c6b57;
+  font-size: 1.3rem; /* Aumentado el tamaño de la fuente */
+  color: #2c2222; /* Tono aún más oscuro */
   letter-spacing: 1px;
+  font-weight: 600; /* Hecho más audaz */
 }
 
 .fecha {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
-  color: #4a3b3b;
+  color: #2c2222; /* Tono aún más oscuro */
   margin-bottom: 3rem;
   letter-spacing: 1px;
 }
@@ -1562,40 +1559,6 @@ body {
   transition: transform 0.3s ease-out;
 }
 
-.overlay {
-  position: absolute;
-  text-align: center;
-  color: #fff;
-  z-index: 2;
-  background-color: rgba(0,0,0,0.4);
-  padding: 2rem 3rem;
-  border-radius: 10px;
-}
-
-.bendicion {
-  font-family: 'Playfair Display', serif;
-  text-transform: uppercase;
-  font-size: 1rem;
-
-  letter-spacing: 3px;
-  color: #f7d9c4;
-  margin-bottom: 1rem;
-}
-
-.nombres {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
-
-  margin-bottom: 0.5rem;
-}
-/* Date text */
-.fecha {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  color: #f7d9c4;
-}
-
-
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #fdfbf5;
@@ -1713,11 +1676,5 @@ body {
         padding-bottom: 0;
         font-size: 12px;
         overflow: visible;
-    }
-}
-@media screen and (max-width: 767px) {
-    .count-label {
-        letter-spacing: 2.4px;
-        font-size: 12px;
     }
 }
