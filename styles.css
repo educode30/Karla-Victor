@@ -229,10 +229,10 @@
         padding: 0.3rem 0; /* Reduce el padding vertical interno */
       }
       .count-number {
-        font-size: 1.7rem; /* Reduce aún más el tamaño de la fuente de los números */
+        font-size: 1.5rem; /* Reducción final para asegurar que quepan 3 dígitos */
       }
       .count-label {
-        font-size: 0.5rem; /* Reduce aún más el tamaño de la fuente de las etiquetas */
+        font-size: 0.45rem; /* Ajuste fino para la etiqueta */
         letter-spacing: 0; /* Sin espaciado extra para la abreviatura */
       }
     }
