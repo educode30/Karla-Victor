@@ -159,14 +159,12 @@
     
     /* Cuenta regresiva */
     .countdown {
-      font-family: 'Montserrat', sans-serif;
-      color: #4a3b3b;
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      margin: 3rem auto;
+      align-items: center;
+      gap: 3rem;
       flex-wrap: wrap;
-      margin-bottom: 40px;
+      text-align: center;
     }
     
     .calendar-box {
@@ -216,27 +214,26 @@
       text-transform: uppercase;
     }
     
+
+
+    /* 📱 Tablets y pantallas medianas */
     @media (max-width: 768px) {
       .countdown {
-        flex-wrap: nowrap; /* ¡Importante! Evita que los elementos salten a la siguiente línea */
-        gap: 0.3rem; /* Reduce aún más el espacio entre elementos */
-        justify-content: space-between; /* Distribuye los elementos uniformemente */
-        padding: 0 3px; /* Reduce el padding lateral para ganar espacio */
+        gap: 1.2rem;
       }
-      .count-box {
-        width: 24%; /* Ancho porcentual para cada caja */
-        min-width: 0; /* Permite que el elemento se encoja si es necesario */
-        padding: 0.3rem 0; /* Reduce el padding vertical interno */
-      }
+
       .count-number {
-        font-size: 6vw; /* Tamaño de fuente basado en el ancho del viewport */
+        font-size: 8vw; /* Escala dinámica */
       }
+
       .count-label {
-        font-size: 2vw; /* Tamaño de fuente basado en el ancho del viewport */
-        letter-spacing: 0; /* Sin espaciado extra para la abreviatura */
+        font-size: 3vw;
+      }
+
+      .count-box {
+        min-width: 60px;
       }
     }
-
     /* Sección de ubicación */
     .location-section {
       text-align: center;
@@ -702,11 +699,12 @@
       position: fixed;
       top: 30px;
       right: 30px;
-      z-index: 1000;
+      z-index: 9999; /* Asegura que esté siempre por encima de todo */
       opacity: 0;
       transform: translateY(-20px);
       transition: all 0.5s ease;
       display: none;
+      transform: translateZ(0); /* Fuerza la aceleración por hardware para position: fixed */
     }
     
     .music-controls.visible {
@@ -1253,7 +1251,26 @@ section {
     width: 80%; /* Ajusta el ancho de la línea al 80% del contenedor */
   }
 }
+@media (max-width: 480px) {
+  .countdown {
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+  }
 
+  .count-box {
+    flex: 1 1 40%; /* permite 2 por fila */
+    min-width: 50px;
+  }
+
+  .count-number {
+    font-size: 10vw;
+  }
+
+  .count-label {
+    font-size: 4vw;
+  }
+}
 /* Estilos para el botón de carga */
 .loading {
   position: relative;
@@ -1485,22 +1502,21 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 100px;
+  min-width: 80px; /* reducido para pantallas pequeñas */
+  flex: 1 1 auto;
 }
 
 .count-number {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.2rem;
+  font-size: 3rem;
   font-weight: 500;
-  color: #1c1c1c;
-  margin-bottom: 0.5rem;
+  font-family: "Playfair Display", serif;
+
 }
 
 .count-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 4px;
-  color: #8c6b57;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 
