@@ -224,15 +224,15 @@
         padding: 0 3px; /* Reduce el padding lateral para ganar espacio */
       }
       .count-box {
-        width: 24%; /* Aumenta ligeramente el ancho de cada caja */
+        width: 24%; /* Ancho porcentual para cada caja */
         min-width: 0; /* Permite que el elemento se encoja si es necesario */
         padding: 0.3rem 0; /* Reduce el padding vertical interno */
       }
       .count-number {
-        font-size: 1.5rem; /* Reducción final para asegurar que quepan 3 dígitos */
+        font-size: 6vw; /* Tamaño de fuente basado en el ancho del viewport */
       }
       .count-label {
-        font-size: 0.45rem; /* Ajuste fino para la etiqueta */
+        font-size: 2vw; /* Tamaño de fuente basado en el ancho del viewport */
         letter-spacing: 0; /* Sin espaciado extra para la abreviatura */
       }
     }
