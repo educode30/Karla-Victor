@@ -1468,6 +1468,41 @@ section {
   font-weight: 700; /* Hecho más audaz */
 }
 
+/* --- Sección de los Papás --- */
+.padres-container {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+.padres-columna {
+  text-align: center;
+}
+
+.padres-columna h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.padres-columna p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+}
+
+@media (max-width: 768px) {
+  .padres-container {
+    gap: 2rem;
+  }
+}
+
 .nombres {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
