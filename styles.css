@@ -1457,6 +1457,9 @@ section {
   font-family: 'Montserrat', sans-serif;
 }
 
+.padres-section {
+  background-color: #fdfbf5;
+}
 .bendicion {
   font-family: Butler, "Times New Roman", serif;
   text-transform: uppercase;
@@ -1499,8 +1502,12 @@ section {
 .padres-bloque h3 {
   font-family: 'Great Vibes', cursive;
   font-size: 1.6rem;
-  color: #000;
   margin-bottom: 1rem;
+  text-transform: math-auto;
+}
+
+.w-wife {
+  font-family: 'Great Vibes', cursive;
 }
 
 .padres-bloque p {
