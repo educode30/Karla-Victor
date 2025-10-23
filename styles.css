@@ -219,20 +219,20 @@
     @media (max-width: 768px) {
       .countdown {
         flex-wrap: nowrap; /* ¡Importante! Evita que los elementos salten a la siguiente línea */
-        gap: 0.5rem; /* Reduce el espacio entre elementos */
+        gap: 0.3rem; /* Reduce aún más el espacio entre elementos */
         justify-content: space-between; /* Distribuye los elementos uniformemente */
-        padding: 0 5px; /* Pequeño padding lateral para evitar que toquen los bordes */
+        padding: 0 3px; /* Reduce el padding lateral para ganar espacio */
       }
       .count-box {
-        width: 23%; /* Asigna un porcentaje de ancho para que quepan los 4 elementos */
+        width: 24%; /* Aumenta ligeramente el ancho de cada caja */
         min-width: 0; /* Permite que el elemento se encoja si es necesario */
-        padding: 0.5rem 0; /* Reduce el padding interno */
+        padding: 0.3rem 0; /* Reduce el padding vertical interno */
       }
       .count-number {
-        font-size: 2rem; /* Reduce el tamaño de la fuente de los números */
+        font-size: 1.7rem; /* Reduce aún más el tamaño de la fuente de los números */
       }
       .count-label {
-        font-size: 0.6rem; /* Reduce el tamaño de la fuente de las etiquetas */
+        font-size: 0.5rem; /* Reduce aún más el tamaño de la fuente de las etiquetas */
         letter-spacing: 0; /* Sin espaciado extra para la abreviatura */
       }
     }
