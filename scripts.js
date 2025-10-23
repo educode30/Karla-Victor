@@ -180,6 +180,18 @@
         section.style.display = 'none';
       });
 
+      // --- Verificación automática de código desde URL ---
+      const urlParams = new URLSearchParams(window.location.search);
+      const codigoDesdeUrl = urlParams.get('codigo');
+
+      if (codigoDesdeUrl) {
+        // Si hay un código en la URL, oculta el formulario y muestra un mensaje de carga
+        document.getElementById('confirm').style.display = 'none';
+        document.getElementById('loading-message').style.display = 'block';
+        // Ejecuta la verificación automáticamente
+        ejecutarVerificacion(codigoDesdeUrl);
+      }
+
       // --- Lógica del Modal de Código de Vestimenta ---
       const dressModal = document.getElementById('dressModal');
       const openBtn = document.getElementById('openDressCode');
@@ -339,35 +351,41 @@
     let originalChildren = 0;
     let alergiasGuardadas = '';
 
-    function verificarCodigo() {
-      const codigo = document.getElementById("codigoSecreto").value.trim();
-      if (!codigo) {
-        mostrarModalMensaje("Por favor ingresa un código");
-        return;
-      }
-
-      const button = event.target;
-      button.classList.add('loading');
-
+    function ejecutarVerificacion(codigo) {
       // Elimina script viejo si existe
       const oldScript = document.getElementById("jsonpScript");
       if (oldScript) oldScript.remove();
-
+    
       const script = document.createElement("script");
       script.id = "jsonpScript";
       script.src = `${SCRIPT_URL}?codigo=${encodeURIComponent(codigo)}&callback=procesarRespuesta`;
       
       script.onerror = () => {
         mostrarModalMensaje('Hubo un error al verificar el código. Intenta de nuevo.');
-        button.classList.remove('loading');
+        const button = document.querySelector('.code-form button');
+        if (button) button.classList.remove('loading');
+        document.getElementById('loading-message').style.display = 'none';
       };
-
+    
       document.body.appendChild(script);
+    }
+
+    function verificarCodigo() {
+      const codigoInput = document.getElementById("codigoSecreto");
+      const codigo = codigoInput.value.trim();
+      if (!codigo) {
+        mostrarModalMensaje("Por favor ingresa un código");
+        return;
+      }
+      const button = event.target;
+      button.classList.add('loading');
+      ejecutarVerificacion(codigo);
     }
 
     function procesarRespuesta(data) {
       const button = document.querySelector('.code-form button');
       if (button) button.classList.remove('loading');
+      document.getElementById('loading-message').style.display = 'none';
 
       if (data.error) {
         mostrarModalMensaje(data.error);

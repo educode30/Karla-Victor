@@ -21,7 +21,7 @@
   <!-- Contenido principal (oculto inicialmente) -->
   <header id="principal">
     <h1>Karla & Victor</h1>
-    <p><b>¡Nos casamos!</b> <b>Acompáñanos en este día tan especial</b></p>
+    <p>¡Nos casamos! Acompáñanos en este día tan especial</p>
   </header>
   
   
@@ -40,13 +40,12 @@
         <div class="padres-columna">
           <h3>Papás de la Novia</h3>
           <p>Carlos Alcantar Rojas</p>
-          <p>Marysol López Borgas</p>
+          <p>Marysol López Borges</p>
         </div>
       </div>
 
       <h2 class="nombres">Victor & Karla</h2>
       <p class="subtitulo">Nuestra Boda</p>
-      <p class="fecha">• 28 de Marzo del 2026 •</p>
 
       <div class="info-boda">
         <div class="info-item">
@@ -116,7 +115,7 @@
   <section class="boda-section location-section">
     <div class="container">
       <h2>Ceremonia y Evento</h2>
-      <p>Tepotzotlán, Jardin Quinta Montecristo a las 16:30h</p>
+      <p>Tepotzotlán, Jardin Quinta Montecristo a las 16:00h</p>
       
       <img class="location-image" src="https://cdn0.bodas.com.mx/vendor/0633/3_2/960/jpeg/54ae9318-d3b3-4176-bcf3-c33fe4a2c605_5_160633-164558573181600.jpeg" alt="Lugar de la ceremonia">
       
@@ -150,9 +149,6 @@
         </div>
       <h2>Código de Vestimenta</h2>
         <p><span class="check-icon"><div><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-go42p8" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CheckroomIcon"><path d="M21.6 18.2 13 11.75v-.91c1.65-.49 2.8-2.17 2.43-4.05-.26-1.31-1.3-2.4-2.61-2.7C10.54 3.57 8.5 5.3 8.5 7.5h2c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 .84-.69 1.52-1.53 1.5-.54-.01-.97.45-.97.99v1.76L2.4 18.2c-.77.58-.36 1.8.6 1.8h18c.96 0 1.37-1.22.6-1.8zM6 18l6-4.5 6 4.5H6z"></path></svg></div>
-        </span> Formal</p>
-        <p class="dress-code-note">Traje elegante o de gala para caballeros<br>Vestido largo o de cóctel para damas</p>
-
         <!-- Botón para abrir el modal -->
         <button class="btn-info" id="openDressCode">Ver guía de vestimenta</button>
       </div>
@@ -171,6 +167,9 @@
   <section id="sectionConfirm" class="confirmation-section">
     <div class="container">
       <h2>Confirma tu asistencia</h2>
+
+      <!-- Mensaje de carga para verificación automática -->
+      <p id="loading-message" style="display: none;">Verificando tu invitación, por favor espera...</p>
 
      
      
@@ -223,7 +222,6 @@
           </div>
           <div class="gift-info">
             <h3>Lista de Amazon</h3>
-            <p>Regalos seleccionados en nuestra tienda favorita</p>
             <a href="https://www.amazon.com.mx/wedding/registry/17118GSMV0V76" 
                target="_blank" 
                class="gift-button">
@@ -240,7 +238,6 @@
           </div>
           <div class="gift-info">
             <h3>Mesa de Regalos Liverpool</h3>
-            <p>Artículos para nuestro hogar en diferentes precios</p>
             <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51747594" 
                target="_blank" 
                class="gift-button">
@@ -267,12 +264,11 @@
         <div class="timeline-event">
           <div class="event-time">
             <div class="event-dot"></div>
-              15:30 hrs
+              16:00 hrs
           </div>
           <div class="event-card">
-            <h3>Ceremonia</h3>
+            <h3>Recepción</h3>
             <p>Jarquin Quinta Montecristo, Tepotzotlán</p>
-            <div class="event-note">Vestimenta formal</div>
           </div>
         </div>
         
@@ -280,12 +276,11 @@
         <div class="timeline-event">
           <div class="event-time">
             <div class="event-dot"></div>
-              16:45 hrs
+              16:30 hrs
           </div>
           <div class="event-card">
-            <h3>Sesión de Fotos</h3>
+            <h3>Ceremonia</h3>
             <p>Jardines de la Quinta</p>
-            <div class="event-note">¡Prepárense para sonreír!</div>
           </div>
         </div>
         
@@ -293,25 +288,11 @@
         <div class="timeline-event">
           <div class="event-time">
             <div class="event-dot"></div>
-              17:30 hrs
+              16:50 hrs
           </div>
           <div class="event-card">
-            <h3>Cóctel de Bienvenida</h3>
+            <h3>Cóctel de Bienvenida 🥂</h3>
             <p>Terraza Principal</p>
-            <div class="event-note">Bebidas y bocadillos</div>
-          </div>
-        </div>
-        
-        <!-- Evento 4 -->
-        <div class="timeline-event">
-          <div class="event-time">
-            <div class="event-dot"></div>
-              18:30 hrs
-          </div>
-          <div class="event-card">
-            <h3>Banquete</h3>
-            <p>Salón Principal</p>
-            <div class="event-note">Menú de 3 tiempos</div>
           </div>
         </div>
         
@@ -324,7 +305,6 @@
           <div class="event-card">
             <h3>Baile y Fiesta</h3>
             <p>Pista de Baile</p>
-            <div class="event-note">¡Todos invitados a bailar!</div>
           </div>
         </div>
         
@@ -332,53 +312,11 @@
         <div class="timeline-event">
           <div class="event-time">
             <div class="event-dot"></div>
-              23:00 hrs
+              01:00 hrs
           </div>
           <div class="event-card">
             <h3>Despedida</h3>
             <p>Entrada Principal</p>
-            <div class="event-note">¡Gracias por acompañarnos!</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Galería de momentos -->
-  <section class="boda-section galeria-momentos">
-    <div class="container">
-      <h2>Momentos Especiales</h2>
-      
-      <div class="cards-container">
-        <div class="card" data-gallery="cita">
-          <img src="images/firstdate.jpeg" alt="Primera cita">
-          <div class="card-content">
-            <h3>Primera Cita</h3>
-            <p>Una noche mágica que marcó el inicio de nuestra historia 💖</p>
-          </div>
-        </div>
-        
-        <div class="card" data-gallery="compromiso">
-          <img src="images/propuesta.jpeg" alt="Compromiso">
-          <div class="card-content">
-            <h3>Compromiso</h3>
-            <p>Entre risas y nervios, dijimos: ¡Sí, acepto! 💍</p>
-          </div>
-        </div>
-        
-        <div class="card" data-gallery="pedida">
-          <img src="images/pedida4.jpeg" alt="Pedida de mano">
-          <div class="card-content">
-            <h3>Pedida de Mano</h3>
-            <p>El momento en que nuestras familias se unieron a nuestro sí. 🥂</p>
-          </div>
-        </div>
-        
-        <div class="card" data-gallery="viajes">
-          <img src="images/hidalgo.jpeg" alt="Viajes juntos">
-          <div class="card-content">
-            <h3>Viajes Juntos</h3>
-            <p>Descubriendo el mundo de la mano 🗺️✨</p>
           </div>
         </div>
       </div>

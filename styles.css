@@ -16,7 +16,7 @@
     
     /* Ajustes de tipografía */
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       color: var(--color-text);
       line-height: 1.6;
       background-color: var(--color-white);
@@ -205,8 +205,8 @@
     .calendar-box span {
       font-size: 1rem;
       font-size: 0.7rem;
-      margin-top: 0.5rem;
-      font-family: 'Open Sans', sans-serif;
+      margin-top: 0.5rem; 
+      font-family: 'Montserrat', sans-serif;
       font-weight: normal;
       color: var(--color-primary);
       font-weight: 300;
@@ -302,7 +302,7 @@
     }
     
     .confirmation-section h2 {
-      font-size: 3rem;
+      font-size: 2.2rem;
       color: var(--color-primary);
       margin-bottom: 2rem;
     }
@@ -354,8 +354,8 @@
     
     .panel-reducido h3 {
       color: var(--color-secondary);
-      margin-bottom: 1.5rem;
-      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 1.5rem; 
+      font-family: Butler, "Times New Roman", serif;
       font-weight: 600;
     }
     
@@ -528,8 +528,9 @@
 
     .allergy-content h3 {
       color: var(--color-secondary);
-      font-family: 'Open Sans', sans-serif;
+      font-family: Butler, "Times New Roman", serif;
       margin-bottom: 1rem;
+      font-size: 1.3rem; /* Tamaño de fuente ajustado para el título del modal */
     }
 
     .allergy-list {
@@ -836,7 +837,6 @@
   .dress-code {
     width: 4em;
     height: 4em;
-    color: #d9ae79;
   }
   
   .dress-code-simple h2 {
@@ -868,7 +868,6 @@
   
   /* 🌟 Botón */
   .btn-info {
-    background-color: #d9ae79;
     color: #fff;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -1211,7 +1210,7 @@
   align-items: center;
   text-align: center;
   z-index: 9999; /* Siempre encima de todo */
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Montserrat', sans-serif;
   overflow: hidden;
 }
 
@@ -1459,7 +1458,7 @@ section {
 }
 
 .bendicion {
-  font-family: 'Playfair Display', serif;
+  font-family: Butler, "Times New Roman", serif;
   text-transform: uppercase;
   font-size: 1.2rem; /* Aumentado el tamaño de la fuente */
   letter-spacing: 2px; /* Reducido el espaciado para mejor legibilidad */
@@ -1482,7 +1481,7 @@ section {
 }
 
 .padres-columna h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: Butler, "Times New Roman", serif;
   font-size: 1.1rem;
   color: var(--color-primary);
   margin-bottom: 0.7rem;
@@ -1504,7 +1503,7 @@ section {
 }
 
 .nombres {
-  font-family: 'Playfair Display', serif;
+  font-family: Butler, "Times New Roman", serif;
   font-size: 2.2rem;
   letter-spacing: 1px;
   margin-bottom: 0.3rem;
@@ -1515,11 +1514,10 @@ section {
   font-size: 1.3rem; /* Aumentado el tamaño de la fuente */
   color: #2c2222; /* Tono aún más oscuro */
   letter-spacing: 1px;
-  font-weight: 600; /* Hecho más audaz */
 }
 
 .fecha {
-  font-family: 'Playfair Display', serif;
+  font-family: Butler, "Times New Roman", serif;
   font-size: 1.1rem;
   color: #2c2222; /* Tono aún más oscuro */
   margin-bottom: 3rem;
@@ -1562,7 +1560,7 @@ section {
 }
 
 .mes {
-  font-family: 'Playfair Display', serif;
+  font-family: Butler, "Times New Roman", serif;
   color: #824b34;
   letter-spacing: 3px;
   margin-bottom: 0.5rem;
@@ -1570,14 +1568,14 @@ section {
 }
 
 .dia {
-  font-family: 'Playfair Display', serif;
+  font-family: Butler, "Times New Roman", serif;
   font-size: 6rem;
   color: #1c1c1c;
   margin: 0;
 }
 
 .anio {
-  font-family: 'Playfair Display', serif;
+  font-family: Butler, "Times New Roman", serif;
   color: #824b34;
   letter-spacing: 3px;
   margin-top: 0.3rem;
@@ -1605,7 +1603,7 @@ section {
 .count-number {
   font-size: 3rem;
   font-weight: 500;
-  font-family: "Playfair Display", serif;
+  font-family: Butler, "Times New Roman", serif;
 
 }
 
