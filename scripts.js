@@ -153,6 +153,11 @@
       document.getElementById('panelReducido').style.display = 'block';
     }
     
+    function ocultarPanelReducido() {
+      document.getElementById('panelReducido').style.display = 'none';
+      document.getElementById('infoBox').style.display = 'block';
+    }
+
     function cambiarInvitados(tipo, cambio) {
       const elemento = document.getElementById(tipo);
       let valor = parseInt(elemento.textContent) + cambio;

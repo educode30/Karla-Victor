@@ -27,7 +27,6 @@
       color: var(--color-secondary);
 
       font-family: Butler, "Times New Roman", serif;
-      font-size: clamp(64px, 14vw, 200px);
       letter-spacing: -0.03em;
       line-height: 0.9;
       text-transform: uppercase;
@@ -222,6 +221,9 @@
         gap: 1.2rem;
       }
 
+      h3 {
+        font-size: 1.3rem;
+      }
       .count-number {
         font-size: 8vw; /* Escala dinámica */
       }
@@ -416,6 +418,21 @@
       background-color: var(--color-secondary);
     }
     
+    .volver-atras-btn {
+      margin-top: 1rem;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      background-color: transparent;
+      color: var(--color-primary);
+      border: 2px solid var(--color-primary);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    .volver-atras-btn:hover {
+      background-color: rgba(183, 110, 121, 0.1);
+    }
     /* Info box */
     .info-box {
       display: none;
@@ -437,6 +454,16 @@
     .info-box p strong {
       color: var(--color-secondary);
       font-weight: 600;
+    }
+
+    .transfer-note {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--color-primary);
+      text-align: center;
+      margin-top: 1.5rem;
+      border-top: 1px dashed var(--color-accent);
+      padding-top: 1rem;
     }
     
     .codigo-form {
@@ -586,6 +613,12 @@
 
     .allergy-buttons .close-btn, .message-content .close-btn {
       background-color: #888;
+    }
+
+    .confirm-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
     }
 
     /* Modal de Mensajes Genérico */
