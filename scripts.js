@@ -612,3 +612,24 @@
   function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
+
+    // --- Función para copiar al portapapeles ---
+    function copyToClipboard(elementId, button) {
+      const textToCopy = document.getElementById(elementId).innerText;
+      
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        // Éxito al copiar
+        const originalText = button.innerText;
+        button.innerText = '¡Copiado!';
+        button.classList.add('copied');
+        
+        setTimeout(() => {
+          button.innerText = originalText;
+          button.classList.remove('copied');
+        }, 2000); // Vuelve al texto original después de 2 segundos
+      }).catch(err => {
+        // Error al copiar
+        console.error('Error al copiar: ', err);
+        alert('No se pudo copiar el código.');
+      });
+    }

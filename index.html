@@ -34,8 +34,8 @@
 
         <div class="padres-bloque">
           <h3>Padres del novio</h3>
-          <p>Victorino Calderon Alvarez</p>
-          <p>Zenaida Sonia Montes de Oca Rodriguez ✟</p>
+          <p>Victorino Calderón Alvarez</p>
+          <p>Zenaida Sonia Montes de Oca Rodríguez ✟</p>
         </div>
 
         <div class="padres-bloque">
@@ -70,7 +70,7 @@
 
         <div class="info-item">
           <div class="linea"></div>
-          <p class="info-texto">16:00</p>
+          <p class="info-texto">16:00 hrs</p>
           <div class="linea"></div>
         </div>
       </div>
@@ -248,12 +248,18 @@
           </div>
           <div class="gift-info">
             <h3>Mesa de Regalos Liverpool</h3>
-            <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51747594" 
-               target="_blank" 
-               class="gift-button">
-              Ver Lista
-              <i class="fas fa-external-link-alt"></i>
-            </a>
+            <p class="gift-code">
+              <span>Número de evento: </span>
+              <strong id="liverpool-code">51747594</strong>
+            </p>
+            <div class="gift-buttons-container">
+              <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51747594" 
+                 target="_blank" 
+                 class="gift-button">
+                Ver Lista
+              </a>
+              <button class="copy-btn" onclick="copyToClipboard('liverpool-code', this)">Copiar código</button>
+            </div>
           </div>
         </div>
       </div>
@@ -333,13 +339,81 @@
     </div>
   </section>
 
+  <!-- Sección de Sugerencias (Hospedaje y Turismo) -->
+  <section class="boda-section suggestions-section">
+    <div class="container">
+      <h2>Sugerencias</h2>
+      <p class="subtitle">Hemos preparado algunas recomendaciones para que disfrutes al máximo tu visita.</p>
+
+      <div class="suggestions-container">
+        <!-- Dropdown de Hospedaje -->
+        <details class="suggestion-dropdown">
+          <summary class="suggestion-summary">
+            Hospedaje
+          </summary>
+          <div class="suggestion-content">
+            <div class="hotel-cards">
+              <div class="hotel-card">
+                <div class="hotel-info">
+                  <h3>Hotel Finca las Hortensias</h3>
+                  <p>Un lugar encantador con hermosos jardines, ideal para relajarse.</p>
+                  <a href="https://www.booking.com/hotel/mx/finca-las-hortensias.es.html" target="_blank" class="hotel-button">Ver en Booking.com</a>
+                </div>
+              </div>
+              <div class="hotel-card">
+                <div class="hotel-info">
+                  <h3>Posada del Fraile</h3>
+                  <p>Estilo colonial en el corazón del pueblo mágico de Tepotzotlán.</p>
+                  <a href="https://www.booking.com/hotel/mx/posada-del-fraile.es.html" target="_blank" class="hotel-button">Ver en Booking.com</a>
+                </div>
+              </div>
+            </div>
+            <div class="booking-link">
+              <a class="hotel-button" href="https://www.bestday.com.mx/accommodations/results/CIT_9317/2026-03-28/2026-03-29/2?from=SB2&facet=city&reSearch=true&searchId=45527a81-c330-43ea-a212-508b578230a1" target="_blank" class="btn-info">Buscar más hoteles</a>
+            </div>
+          </div>
+        </details>
+
+        <!-- Dropdown de Lugares Turísticos -->
+        <details class="suggestion-dropdown">
+          <summary class="suggestion-summary">
+            Lugares Turísticos
+          </summary>
+          <div class="suggestion-content">
+            <p class="tourist-intro">Tepotzotlán es un Pueblo Mágico con mucho que ofrecer. Aquí tienes algunas ideas:</p>
+            <div class="tourist-cards-container">
+              <!-- Lugar 1 -->
+              <div class="tourist-card">
+                <div class="tourist-icon">🏛️</div>
+                <h3>Museo Nacional del Virreinato</h3>
+                <p>Una joya arquitectónica e histórica que no te puedes perder.</p>
+              </div>
+              <!-- Lugar 2 -->
+              <div class="tourist-card">
+                <div class="tourist-icon">🏞️</div>
+                <h3>Arcos del Sitio</h3>
+                <p>Un acueducto monumental en un parque ecoturístico ideal para la aventura.</p>
+              </div>
+              <!-- Lugar 3 -->
+              <div class="tourist-card">
+                <div class="tourist-icon">🌳</div>
+                <h3>Plaza de la Cruz</h3>
+                <p>El corazón del pueblo, perfecto para pasear y disfrutar de la gastronomía local.</p>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
 <section class="playlist-section">
   <div class="playlist-card">
     <div class="playlist-icon">🎶</div>
     <h2 class="playlist-title">Visualiza la playlist</h2>
     <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7vCdFVsw8albK9G6fnY3RG?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     <a href="https://open.spotify.com/playlist/7vCdFVsw8albK9G6fnY3RG?si=etYGiMKwRKKLEQQqMykp_Q&pt=949d534e9dac18a164aef50b8c4ad43b&pi=xXibwj6NQ4mME" target="_blank" class="playlist-button">
-      Agregar canciones
+      ¿Qué canción no puede faltar en nuestra boda?
     </a>
   </div>
 </section>
