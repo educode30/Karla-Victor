@@ -171,6 +171,7 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   text-align: center;
   max-width: 600px;
+  padding: 0.5rem;
   margin: 0 auto; /* asegura que quede centrado en contenedores normales */
 }
 
