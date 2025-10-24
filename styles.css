@@ -156,6 +156,69 @@
       margin-bottom: 1rem;
     }
     
+.playlist-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto;
+  width: 100%;
+  text-align: center;
+}
+
+.playlist-card {
+  background-color: #fdf8f6; /* tono crema */
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 40px;
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto; /* asegura que quede centrado en contenedores normales */
+}
+
+.playlist-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #b57b82; /* tono rosa viejo */
+}
+
+.playlist-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #8b4f55;
+  margin-bottom: 8px;
+}
+
+.playlist-subtitle {
+  font-size: 16px;
+  color: #7a6465;
+  margin-bottom: 20px;
+}
+
+.spotify-embed {
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #e6d6d8;
+  width: 100%;
+}
+
+.playlist-button {
+  background-color: #b57b82;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  display: inline-block;
+}
+
+.playlist-button:hover {
+  background-color: #9a656b;
+}
+
+
     /* Cuenta regresiva */
     .countdown {
       display: flex;
