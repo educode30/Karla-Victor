@@ -169,10 +169,8 @@
   background-color: #fdf8f6; /* tono crema */
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  padding: 40px;
   text-align: center;
   max-width: 600px;
-  width: 90%;
   margin: 0 auto; /* asegura que quede centrado en contenedores normales */
 }
 
