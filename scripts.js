@@ -425,10 +425,8 @@
 
       // Ocultar botón de confirmación
       document.getElementById("confirm").style.display = "none";
-      alert('Bienvenido')
       // --- Cambio de música para invitado especial ---
       if (nombre === 'David Flores') {
-        alert('Hola David')
         const musica = document.getElementById('musica');
         const source = musica.querySelector('source');
         
