@@ -195,18 +195,34 @@
   margin-bottom: 20px;
 }
 
+.spotify-embed-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.spotify-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: 2;
+  cursor: default; /* Opcional: muestra el cursor normal */
+}
+
 .spotify-embed {
   border-radius: 12px;
   margin-bottom: 20px;
-  border: 1px solid #e6d6d8;
   width: 100%;
+  display: block; /* Asegura que no haya espacios extra */
 }
 
 .playlist-button {
   background-color: #b57b82;
   color: #fff;
   text-decoration: none;
-  padding: 8px 13px;
+  padding: 12px 24px;
   width: 80%;
   margin-top: 1rem;
   border: none;
