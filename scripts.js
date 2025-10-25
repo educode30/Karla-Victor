@@ -426,6 +426,19 @@
       // Ocultar botón de confirmación
       document.getElementById("confirm").style.display = "none";
 
+      // --- Cambio de música para invitado especial ---
+      if (nombre.trim().toLowerCase() === 'david flores') {
+        const musica = document.getElementById('musica');
+        const source = musica.querySelector('source');
+        
+        if (source && source.src.includes('Ordinary.mp3')) {
+          musica.pause();
+          source.src = 'flow.mp3';
+          musica.load(); // Carga la nueva canción
+          musica.play().catch(e => console.log("Error al reproducir la canción especial:", e));
+        }
+      }
+
       console.log("Respuesta recibida:", data);
       token = data.token;
       window.token = data.token; // Asignar al token global
