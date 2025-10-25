@@ -427,7 +427,7 @@
       document.getElementById("confirm").style.display = "none";
 
       // --- Cambio de música para invitado especial ---
-      if (nombre.trim().toLowerCase() === 'david flores') {
+      if (nombre === 'David Flores') {
         const musica = document.getElementById('musica');
         const source = musica.querySelector('source');
         
