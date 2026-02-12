@@ -420,6 +420,9 @@ function procesarRespuesta(data) {
     if (deadlineLabel) deadlineLabel.innerHTML = "05 de Febrero, 2026";
     // Remove prefix
     nombre = nombre.replace("Es un placer invitar a:", "").trim();
+  }else if (nombre && nombre.startsWith("Invitado Especial:")) {
+    // Set default deadline
+    if (deadlineLabel) deadlineLabel.innerHTML = "13 de Marzo, 2025";
   } else {
     // Set default deadline
     if (deadlineLabel) deadlineLabel.innerHTML = "20 de Diciembre, 2025";
