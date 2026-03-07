@@ -422,7 +422,7 @@ function procesarRespuesta(data) {
     nombre = nombre.replace("Es un placer invitar a:", "").trim();
   }else if (nombre && nombre.startsWith("Invitado Especial:")) {
     // Set default deadline
-    if (deadlineLabel) deadlineLabel.innerHTML = "13 de Marzo, 2025";
+    if (deadlineLabel) deadlineLabel.innerHTML = "20 de Marzo, 2025";
   } else {
     // Set default deadline
     if (deadlineLabel) deadlineLabel.innerHTML = "20 de Diciembre, 2025";
