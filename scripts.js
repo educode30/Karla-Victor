@@ -425,7 +425,7 @@ function procesarRespuesta(data) {
     if (deadlineLabel) deadlineLabel.innerHTML = "20 de Marzo, 2025";
   } else {
     // Set default deadline
-    if (deadlineLabel) deadlineLabel.innerHTML = "20 de Diciembre, 2025";
+    if (deadlineLabel) deadlineLabel.innerHTML = "27 de Marzo, 2025";
   }
 
   document.getElementById("infoBox").style.display = "block";
